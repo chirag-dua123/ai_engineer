@@ -1,10 +1,10 @@
 def wordcount(filename):
-    counts = {}
-    with open(filename, "r") as f:
-        for line in f:
+    with open(filename, 'r') as file:
+        counts = {}
+        for line in file:
             words = line.split()
             for word in words:
-                word = word.lower().strip(".,!?")  # normalize
+                word = word.lower().strip('.,!?;"\'()[]{}')
                 if word in counts:
                     counts[word] += 1
                 else:
@@ -13,7 +13,6 @@ def wordcount(filename):
     # Sort by frequency
     sorted_counts = sorted(counts.items(), key=lambda x: x[1], reverse=True)
 
-    # Print top 10
     for word, freq in sorted_counts[:10]:
         print(word, freq)
 
