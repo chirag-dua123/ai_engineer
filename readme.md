@@ -1,58 +1,104 @@
+# AI Engineering Project
 
-# Project Structure
+A collection of Python scripts and utilities for learning and practicing AI engineering concepts.  
+This repository includes examples, a calculator CLI, word count utility, and test workflows.
 
-This repository contains basic Python utilities and learning examples.
+---
 
-## Files
+## 📂 Project Structure
 
-### `basics.py`
-Introduction to fundamental Python concepts including:
-- Variables and data types
-- Control flow (if/else, loops)
-- Functions and scope
-- Lists, dictionaries, and tuples
-- String manipulation
-
-### `calculator.py`
-A simple command-line calculator supporting:
-- Addition, subtraction, multiplication, division
-- Basic arithmetic operations
-- User input validation
-
-**Usage:**
-```bash
-python calculator.py
 ```
-
-### `wordcount.py`
-Analyzes text files and displays the 10 most frequently used words.
-
-**Usage:**
-```bash
-python wordcount.py <filename>
-```
-
-**Output:** Prints word frequencies in descending order
-
-## Installation
-
-Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-## Testing
-
-Run tests from the `tests/` folder:
-```bash
-pytest tests/
-```
-
-## Project Layout
-```
+.
 ├── basics.py
 ├── calculator.py
 ├── wordcount.py
 ├── requirements.txt
-└── tests/
+├── pytest.ini
+├── tests/
+└── .github/workflows/pytest.yml
 ```
+
+---
+
+## ⚙️ Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/ai-engineering.git
+   cd ai-engineering
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   - Core dependencies: `pytest`
+   - Optional (development): `black`, `ruff`
+
+---
+
+## ▶️ Usage
+
+Run the scripts directly:
+
+```bash
+python basics.py
+python calculator.py
+python wordcount.py input.txt
+```
+
+Or use the module syntax:
+
+```bash
+python -m src.calculator
+```
+
+---
+
+## 🧮 Calculator CLI
+
+The calculator supports basic operations.  
+Errors are raised as `Exception`s (not strings), so tests can assert on exceptions or values.
+
+Example:
+
+```bash
+python calculator.py 5 3 add
+```
+
+---
+
+## 🧪 Testing
+
+Run all tests with:
+
+```bash
+pytest
+```
+
+Configuration is in `pytest.ini`.
+
+---
+
+## 🔄 Continuous Integration
+
+GitHub Actions workflow is included at `.github/workflows/pytest.yml`.  
+It runs:
+
+```bash
+pip install -r requirements.txt
+pytest
+```
+
+on **Python 3.11**.
+
+---
+
+## 🎨 Code Style
+
+- Consistent formatting enforced with `black` and `ruff`.
+- Each file includes module docstrings.
+- `if __name__ == "__main__":` used consistently.
+
+---
