@@ -1,7 +1,9 @@
-from src import calculator
 import pytest
+from src.calculator import run_calculator
 
-def check_float(a):
-    if isinstance(a, float):
-        return True
-    raise ValueError("Not a float")
+def test_add():
+    assert run_calculator(2, 3, '+') == 5
+
+def test_divide_by_zero():
+    with pytest.raises(ZeroDivisionError):
+        run_calculator(4, 0, '/')
