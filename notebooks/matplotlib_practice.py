@@ -28,3 +28,8 @@ plt.show()
 data = np.random.randn(1000)
 plt.hist(data, bins=30, edgecolor='black')
 plt.show()
+
+# Box plot
+data = [np.random.randn(100) for _ in range(4)]
+plt.boxplot(data)
+plt.show()
